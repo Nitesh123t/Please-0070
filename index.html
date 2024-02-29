@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentence Writing</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-size: 20px;
+      background: linear-gradient(to right, #ffcccb, #b3ecff); /* Proposal-like background color */
+   
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    #userName {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    #output {
+      white-space: pre-wrap; /* Preserve line breaks */
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function askName() {
+      const userName = prompt("Enter your name:");
+      if (userName) {
+        document.getElementById("userName").innerText = `Hello, Can u please draw my figure , ${userName}!`;
+        document.getElementById("output").style.display = "block";
+        setTimeout(writeSentences, 1000);
+      }
+    }
+
+    function writeSentences() {
+      const repeatedSentence = "please please please please please please please please please. ";
+      const repeatedSentences = repeatedSentence.repeat(2000);
+      document.getElementById("output").innerText = repeatedSentences;
+    }
+  </script>
+
+  <button onclick="askName()">Enter your name</button>
+  <p id="userName"></p>
+  <p id="output" style="display: none;"></p>
+</body>
+</html>
